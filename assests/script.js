@@ -1,7 +1,7 @@
 $(function () {
   //
   let today = dayjs();
-  $('#currentDay').text(today.format('dddd, MMMM D YYYY'));
+  $('#currentDay').text(today.format('dddd, MMMM D, YYYY'));
 
   let saveBtn = $('.saveBtn');
 
@@ -23,11 +23,11 @@ $(function () {
 
   for (i = 0; i < businessHour.length; i++) {
     if (businessHour[i] < currentHour) {
-      $('.time-block').addClass('past');
+      $('#hour-' + businessHour[i]).addClass('past');
     } else if (businessHour[i] > currentHour) {
-      $('.time-block').addClass('future');
+      $('#hour-' + businessHour[i]).addClass('future');
     } else {
-      $('.time-block').addClass('present');
+      $('#hour-' + businessHour[i]).addClass('present');
     }
   }
 });
