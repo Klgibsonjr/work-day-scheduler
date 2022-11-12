@@ -14,6 +14,20 @@ $(function () {
     let calenderText = $(this).siblings('.description').get(0).value;
     localStorage.setItem($(this).parent().attr('id'), calenderText);
   });
+
+  let businessHour = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+
+  for (i = 0; i < businessHour.length; i++) {
+    let eventStorage = localStorage.getItem('hour-' + businessHour[i]);
+    let hourTextArea = document.querySelector('#hour-' + businessHour[i] + ' > .description');
+    hourTextArea.textContent = eventStorage;
+  }
+
+  let currentHour = dayjs().hour();
+
+  for (i = 0; i < businessHour.length; i++) {
+    if (businessHour[i] < currentHour) {
+
 });
 
 // TODO: Add a listener for click events on the save button. This code should
@@ -28,6 +42,8 @@ $(function () {
 // attribute of each time-block be used to conditionally add or remove the
 // past, present, and future classes? How can Day.js be used to get the
 // current hour in 24-hour time?
+// let calenderHours =
+
 //
 // TODO: Add code to get any user input that was saved in localStorage and set
 // the values of the corresponding textarea elements. HINT: How can the id
@@ -39,10 +55,3 @@ $(function () {
 // if [i] is less than itself = past
 // if [i] is greater than itself = future
 // if [i] is equal to itself = present
-let businessHour = [9, 10, 11, 12, 13, 14, 15, 16, 17];
-
-for (i = 0; i < businessHour.length; i++) {
-  let eventStorage = localStorage.getItem('hour-' + businessHour[i]);
-  let hourContainerElm = document.querySelector('hour-' + businessHour[i]);
-  hourContainerElm.textContent = eventStorage;
-}
