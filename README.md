@@ -19,3 +19,11 @@ Below are a some examples of the daily planner in action.
 ---
 
 ![Daily planner 2 ](./assests/SCR-20221114-wwp.png)
+
+---
+
+#### LINKS
+
+> - Deployed Word Day Scheduler: https://klgibsonjr.github.io/work-day-scheduler/
+
+> - Github Repository of Work Day Scheduler: https://github.com/Klgibsonjr/work-day-scheduler
